@@ -2,7 +2,7 @@ import {Link} from "react-router-dom"
 
 const NavBar = () => {
   return (
-    <div className="bg-red-500 p-3 flex justify-between items-center">
+    <div className="bg-gradient-to-br from-slate-900 via-blue-800 to-cyan-600   p-3 flex justify-between items-center">
       <img src="/dim.png" className="w-25 h-15 rounded" />
 
       <div className="flex gap-7 mx-5">
