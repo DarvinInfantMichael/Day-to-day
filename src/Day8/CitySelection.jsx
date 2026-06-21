@@ -38,7 +38,7 @@ const CitySelection = () => {
         {/* City Selection */}
         <div className="bg-white rounded-2xl shadow-xl p-6">
           <h2 className="text-2xl font-bold text-blue-700 mb-5">
-            🏙️ City Selection
+            City Selection
           </h2>
 
           <label className="font-semibold">Select City</label>
@@ -64,7 +64,7 @@ const CitySelection = () => {
         {/* Course */}
         <div className="bg-white rounded-2xl shadow-xl p-6">
           <h2 className="text-2xl font-bold text-green-700 mb-5">
-            📚 Course Registration
+             Course Registration
           </h2>
 
           <label className="font-semibold">Select Course</label>
@@ -98,7 +98,7 @@ const CitySelection = () => {
         {/* Character Counter */}
         <div className="bg-white rounded-2xl shadow-xl p-6">
           <h2 className="text-2xl font-bold text-purple-700 mb-5">
-            🔢 Character & Word Counter
+            Character & Word Counter
           </h2>
 
           <input
@@ -137,7 +137,7 @@ const CitySelection = () => {
         {/* Upper Lower */}
         <div className="bg-white rounded-2xl shadow-xl p-6">
           <h2 className="text-2xl font-bold text-red-700 mb-5">
-            🔠 Uppercase & Lowercase Converter
+             Uppercase & Lowercase Converter
           </h2>
 
           <input

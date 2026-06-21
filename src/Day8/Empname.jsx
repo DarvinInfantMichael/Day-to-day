@@ -24,7 +24,7 @@ const Empname = () => {
       <div className="bg-white w-full max-w-xl rounded-2xl shadow-2xl p-8">
 
         <h1 className="text-3xl font-bold text-center text-blue-700 mb-8">
-          👨‍💼 Employee Registration Form
+          Employee Registration Form
         </h1>
 
         {/* Employee Name */}
@@ -84,7 +84,7 @@ const Empname = () => {
         {details.name && (
           <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-5">
             <h2 className="text-2xl font-bold text-blue-700 mb-4">
-              📋 Employee Details
+              Employee Details
             </h2>
 
             <p className="text-lg">

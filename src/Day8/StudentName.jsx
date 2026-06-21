@@ -14,7 +14,7 @@ const StudentName = () => {
       <div className="bg-white w-full max-w-xl rounded-2xl shadow-2xl p-8">
 
         <h1 className="text-3xl font-bold text-center text-blue-700 mb-8">
-          👤 Student Full Name
+           Student Full Name
         </h1>
 
         {/* First Name */}
@@ -59,7 +59,7 @@ const StudentName = () => {
         {full && (
           <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-5 shadow-md">
             <h2 className="text-xl font-bold text-blue-700 mb-2">
-              📋 Student Details
+               Student Details
             </h2>
 
             <p className="text-lg">

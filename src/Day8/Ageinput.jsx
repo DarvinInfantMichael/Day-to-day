@@ -12,10 +12,10 @@ const Ageinput = () => {
 
     if (email.includes("@")) {
       alert("Valid User Email");
-      setMessage("✅ Valid Email");
+      setMessage("Valid Email");
     } else {
       alert("Invalid Email");
-      setMessage("❌ Invalid Email");
+      setMessage(" Invalid Email");
     }
   };
 

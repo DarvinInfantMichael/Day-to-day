@@ -35,7 +35,7 @@ const Student = () => {
       <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl p-8">
 
         <h1 className="text-4xl font-bold text-center text-blue-700 mb-8">
-          🎓 Student Registration Form
+           Student Registration Form
         </h1>
 
         <form onSubmit={HandleSubmit} className="space-y-5">
@@ -133,7 +133,7 @@ const Student = () => {
         {details.length > 0 && (
           <div className="mt-10">
             <h2 className="text-3xl font-bold text-slate-800 mb-6">
-              📋 Registered Students
+              Registered Students
             </h2>
 
             <div className="space-y-4">
@@ -142,11 +142,11 @@ const Student = () => {
                   key={i}
                   className="bg-blue-50 border border-blue-200 rounded-xl p-5 shadow-md"
                 >
-                  <p><span className="font-semibold">👤 Name:</span> {student.name}</p>
-                  <p><span className="font-semibold">🎂 Age:</span> {student.age}</p>
-                  <p><span className="font-semibold">📚 Course:</span> {student.course}</p>
-                  <p><span className="font-semibold">🏙️ City:</span> {student.city}</p>
-                  <p><span className="font-semibold">📞 Contact:</span> {student.contact}</p>
+                  <p><span className="font-semibold"> Name:</span> {student.name}</p>
+                  <p><span className="font-semibold"> Age:</span> {student.age}</p>
+                  <p><span className="font-semibold"> Course:</span> {student.course}</p>
+                  <p><span className="font-semibold"> City:</span> {student.city}</p>
+                  <p><span className="font-semibold"> Contact:</span> {student.contact}</p>
                 </div>
               ))}
             </div>

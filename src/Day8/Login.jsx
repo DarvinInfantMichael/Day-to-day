@@ -44,7 +44,7 @@ const Login = () => {
         {/* Login Form */}
         <div className="bg-white rounded-2xl shadow-2xl p-6">
           <h2 className="text-2xl font-bold text-blue-700 mb-5">
-            🔐 Login Form
+            Login Form
           </h2>
 
           <form onSubmit={handleLogin}>
@@ -107,7 +107,7 @@ const Login = () => {
         {/* Feedback Form */}
         <div className="bg-white rounded-2xl shadow-2xl p-6">
           <h2 className="text-2xl font-bold text-green-700 mb-5">
-            💬 Feedback Form
+            Feedback Form
           </h2>
 
           <textarea
@@ -146,7 +146,7 @@ const Login = () => {
         {/* Search Box */}
         <div className="bg-white rounded-2xl shadow-2xl p-6 md:col-span-2">
           <h2 className="text-2xl font-bold text-purple-700 mb-5">
-            🔍 Search Box
+             Search Box
           </h2>
 
           <input

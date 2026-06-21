@@ -24,7 +24,7 @@ const FullName = () => {
       <div className="bg-white w-full max-w-2xl rounded-2xl shadow-2xl p-8">
 
         <h1 className="text-3xl font-bold text-center text-blue-700 mb-8">
-          👤 Full Name Form
+          Full Name Form
         </h1>
 
         <form onSubmit={handleName}>
@@ -73,7 +73,7 @@ const FullName = () => {
         {Fullname.length > 0 && (
           <div className="mt-8">
             <h2 className="text-2xl font-bold text-slate-800 mb-4">
-              📋 Added Names
+              Added Names
             </h2>
 
             <div className="space-y-3">

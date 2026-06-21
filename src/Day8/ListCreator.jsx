@@ -77,7 +77,7 @@ const ListCreator = () => {
         {/* User List */}
         <div className="bg-white rounded-2xl shadow-2xl p-6">
           <h2 className="text-2xl font-bold text-blue-700 mb-5">
-            👤 User List Creator
+             User List Creator
           </h2>
 
           <input
@@ -114,7 +114,7 @@ const ListCreator = () => {
         {/* Product List */}
         <div className="bg-white rounded-2xl shadow-2xl p-6">
           <h2 className="text-2xl font-bold text-green-700 mb-5">
-            📦 Product List Creator
+            Product List Creator
           </h2>
 
           <input
@@ -151,7 +151,7 @@ const ListCreator = () => {
         {/* Employee List */}
         <div className="bg-white rounded-2xl shadow-2xl p-6">
           <h2 className="text-2xl font-bold text-purple-700 mb-5">
-            👨‍💼 Employee List Creator
+             Employee List Creator
           </h2>
 
           <input
@@ -206,7 +206,7 @@ const ListCreator = () => {
         {/* Todo */}
         <div className="bg-white rounded-2xl shadow-2xl p-6">
           <h2 className="text-2xl font-bold text-red-700 mb-5">
-            ✅ Todo Application
+            Todo Application
           </h2>
 
           <input
