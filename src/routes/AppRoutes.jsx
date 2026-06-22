@@ -11,6 +11,7 @@ import Day5 from "../pages/Day5";
 import Day6 from "../pages/Day6";
 import Day7 from "../pages/Day7";
 import Day8 from "../pages/Day8";
+import Day9 from "../pages/Day9";
 
 
 const AppRoutes = () => {
@@ -34,7 +35,7 @@ const AppRoutes = () => {
             <Route path="/Day6" element={<Day6/>}/>
             <Route path="/Day7" element={<Day7/>}/>
             <Route path="/Day8" element={<Day8/>}/>
-       
+            <Route path="/Day9" element={<Day9/>}/>
       </Routes>
     </>
   );
