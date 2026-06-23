@@ -1,15 +1,15 @@
-
-const UserCard = ({name,role,style}) => {
-
-
+const UserCard = ({ name, role }) => {
   return (
-    
-    <div style={style}>
-        <h1>{name}</h1>
-        <h3>{role}</h3>
-    </div>
-    
-  )
-}
+    <div>
+      <h1 className="text-2xl font-bold mb-2">
+        {name || "User Name"}
+      </h1>
 
-export default UserCard
+      <h3 className="text-lg">
+        {role || "User Role"}
+      </h3>
+    </div>
+  );
+};
+
+export default UserCard;

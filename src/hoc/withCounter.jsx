@@ -8,16 +8,24 @@ const withCounter = (WrappedComponent) => (props) => {
   }, [props.initialCount]);
 
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <WrappedComponent {...props} count={count} />
 
-      <button onClick={() => setCount(count + 1)}>
-        Increment
-      </button>
+      <div className="flex gap-4">
+        <button
+          onClick={() => setCount(count + 1)}
+          className="bg-blue-600 text-white px-5 py-2 rounded-md"
+        >
+          Increment
+        </button>
 
-      <button onClick={() => setCount(count - 1)}>
-        Decrement
-      </button>
+        <button
+          onClick={() => setCount(count - 1)}
+          className="bg-red-600 text-white px-5 py-2 rounded-md"
+        >
+          Decrement
+        </button>
+      </div>
     </div>
   );
 };

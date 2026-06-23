@@ -1,13 +1,10 @@
-
-
-const withUpperCase = (WrappedComponent) => (props)=>{
-    const{message,...rest}=props
+const withUpperCase = (WrappedComponent) => (props) => {
   return (
     <WrappedComponent
-    {...rest}
-    message={message.toUpperCase()}
+      {...props}
+      message={props.message.toUpperCase()}
     />
-  )
-}
+  );
+};
 
-export default withUpperCase
+export default withUpperCase;

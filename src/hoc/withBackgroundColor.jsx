@@ -1,23 +1,14 @@
-
-const withBackgroundColor = (WrappedComponent) =>(props)=> {
-    const{ color,...rest}=props
-
+const withBackgroundColor = (WrappedComponent) => (props) => {
   return (
+    <div
+      style={{
+        backgroundColor: props.color || "#4B5563",
+      }}
+      className="p-6 rounded-lg text-white w-80 text-center shadow-lg"
+    >
+      <WrappedComponent {...props} />
+    </div>
+  );
+};
 
-    <WrappedComponent
-    {...rest}
-    style={{
-
-        backgroundColor:color,
-        padding: "20px",
-        borderRadius: "10px",
-        color: "white",
-        width: "250px",
-        textAlign: "center",
-
-    }}/>
-    
-  )
-}
-
-export default withBackgroundColor
+export default withBackgroundColor;
