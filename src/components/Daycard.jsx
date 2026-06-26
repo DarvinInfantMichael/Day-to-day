@@ -296,12 +296,39 @@ const Daycard = () => {
 
 
           <button
-            onClick={() => nav("/Day11")}
+            onClick={() => nav("/Day12")}
             className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg font-semibold"
           >
             View Project
           </button>
         </div>
+
+
+        <div className="bg-white rounded-2xl shadow-2xl p-6 text-center hover:scale-105 transition duration-300">
+          <div className="w-20 h-20 mx-auto mb-5 rounded-full bg-purple-100 flex items-center justify-center">
+            <span className="text-4xl">🔥</span>
+          </div>
+
+
+          <h2 className="text-2xl font-bold text-slate-800 mb-2">
+            Day 12
+          </h2>
+
+
+          <p className="text-gray-600 mb-6">
+            Registration,Login and Dashboard.
+          </p>
+
+
+          <button
+            onClick={() => nav("/Day12")}
+            className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg font-semibold"
+          >
+            View Project
+          </button>
+        </div>
+
+        
 
       </div>
     </div>
