@@ -1,19 +1,19 @@
 import { useState } from "react";
 
-const ContactBook = () => {
-  const [data, setData] = useState({
-    userName: "",
-    userNum: "",
-    userEmail: "",
+const CourseEnrollment = () => {
+  const [userdata, setUserdata] = useState({
+    UserName: "",
+    UserCourse: "",
+    Duration: "",
   });
 
-  const [sdata, setSdata] = useState(
-    JSON.parse(localStorage.getItem("Data")) || []
+  const [saveData, setSaveData] = useState(
+    JSON.parse(localStorage.getItem("Items")) || []
   );
 
   const HandleChange = (e) => {
-    setData({
-      ...data,
+    setUserdata({
+      ...userdata,
       [e.target.name]: e.target.value,
     });
   };
@@ -21,17 +21,16 @@ const ContactBook = () => {
   const HandleClick = (e) => {
     e.preventDefault();
 
-    const res = JSON.parse(localStorage.getItem("Data")) || [];
+    const res = [...saveData, userdata];
 
-    res.push(data);
+    localStorage.setItem("Items", JSON.stringify(res));
 
-    localStorage.setItem("Data", JSON.stringify(res));
-    setSdata(res);
+    setSaveData(res);
 
-    setData({
-      userName: "",
-      userNum: "",
-      userEmail: "",
+    setUserdata({
+      UserName: "",
+      UserCourse: "",
+      Duration: "",
     });
   };
 
@@ -39,65 +38,68 @@ const ContactBook = () => {
     <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10">
       {/* Form Card */}
       <div className="bg-white shadow-lg rounded-xl p-8 w-[400px]">
-        <h1 className="text-3xl font-bold text-center mb-6 text-blue-600">
-          Contact Book
+        <h1 className="text-3xl font-bold text-center text-blue-600 mb-6">
+          Course Enrollment
         </h1>
 
         <form className="flex flex-col gap-4">
           <input
             type="text"
+            name="UserName"
+            value={userdata.UserName}
             onChange={HandleChange}
-            name="userName"
-            value={data.userName}
             placeholder="Enter Name..."
             className="border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-400"
           />
 
-          <input
-            type="number"
+          <select
+            value={userdata.UserCourse}
+            name="UserCourse"
             onChange={HandleChange}
-            name="userNum"
-            value={data.userNum}
-            placeholder="Enter Mobile Number..."
             className="border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-400"
-          />
+          >
+            <option value="">Select Course</option>
+            <option value="IT">IT</option>
+            <option value="Sales">Sales</option>
+            <option value="Marketing">Marketing</option>
+          </select>
 
           <input
-            type="email"
+            type="number"
+            name="Duration"
+            value={userdata.Duration}
             onChange={HandleChange}
-            name="userEmail"
-            value={data.userEmail}
-            placeholder="Enter Email..."
+            placeholder="Enter Duration..."
             className="border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-400"
           />
 
           <button
             onClick={HandleClick}
-            className="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300"
+            className="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
           >
-            Register
+            Enroll Now
           </button>
         </form>
       </div>
 
-      {/* Contact Cards */}
+      {/* Enrollment Cards */}
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-        {sdata.map((e, i) => (
+        {saveData.map((e, i) => (
           <div
             key={i}
             className="bg-white rounded-xl shadow-lg p-5 border border-gray-200 w-[320px]"
           >
             <h2 className="text-2xl font-semibold text-blue-600 mb-4">
-              {e.userName}
+              {e.UserName}
             </h2>
 
             <div className="space-y-2 text-gray-700">
               <p>
-                <span className="font-medium">Mobile Number:</span> {e.userNum}
+                <span className="font-medium">Course:</span> {e.UserCourse}
               </p>
 
               <p>
-                <span className="font-medium">Email:</span> {e.userEmail}
+                <span className="font-medium">Duration:</span> {e.Duration} Months
               </p>
             </div>
           </div>
@@ -107,4 +109,4 @@ const ContactBook = () => {
   );
 };
 
-export default ContactBook;
+export default CourseEnrollment;

@@ -1,139 +1,175 @@
 import { useState } from "react";
 
-
 const EmployeeSystem = () => {
+  const [usedata, setUsedata] = useState({
+    userName: "",
+    userID: "",
+    userDept: "",
+    useSalary: "",
+  });
 
-    const[usedata,setUsedata]=useState({userName:"",userID:"",userDept:"",useSalary:""});
-    const [savadata, setSavadata] = useState(() => {
+  const [savadata, setSavadata] = useState(() => {
     return JSON.parse(localStorage.getItem("Items")) || [];
-});
+  });
 
-    const [edit,setEdit]=useState(null);
+  const [edit, setEdit] = useState(null);
 
-    const HandleChange =(e)=>{
+  const HandleChange = (e) => {
+    setUsedata({
+      ...usedata,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-        setUsedata({...usedata,[e.target.name]:e.target.value});
+  const HandleClick = (e) => {
+    e.preventDefault();
 
+    const res = [...savadata];
+
+    if (edit !== null) {
+      res[edit] = usedata;
+      setEdit(null);
+    } else {
+      res.push(usedata);
     }
 
-    const HandleClick=(e)=>{
+    localStorage.setItem("Items", JSON.stringify(res));
 
-        e.preventDefault();
+    setSavadata(res);
 
-        const res=JSON.parse(localStorage.getItem("Items"))||[];
+    setUsedata({
+      userName: "",
+      userID: "",
+      userDept: "",
+      useSalary: "",
+    });
+  };
 
-        if(edit!==null){
-            res[edit]=usedata;
-            setEdit(null);
-        }else{
-            res.push(usedata)
-        }
+  const Handleit = (e, i) => {
+    setUsedata(e);
+    setEdit(i);
+  };
 
-        localStorage.setItem("Items",JSON.stringify(res));
+  const HandleDelete = (id) => {
+    const update = savadata.filter((_, i) => i !== id);
 
-        setSavadata(res);
-        
-        setUsedata({userName:"",userID:"",userDept:"",useSalary:""});
+    setSavadata(update);
 
-    }
-
-    const Handleit =(e,i)=>{
-
-        setUsedata(e);
-        setEdit(i);
-
-    }
-
-
-    const HandleDelete=(id)=>{
-
-        const update=savadata.filter((_,i)=>(i!==id));
-
-        setSavadata(update);
-
-        localStorage.setItem("Items",JSON.stringify(update));
-
-    }
-
+    localStorage.setItem("Items", JSON.stringify(update));
+  };
 
   return (
-    <div>
-        <div>
-            <form>
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10">
+      {/* Form Card */}
+      <div className="bg-white shadow-lg rounded-xl p-8 w-[450px]">
+        <h1 className="text-3xl font-bold text-center text-blue-600 mb-6">
+          Employee Management System
+        </h1>
 
-                <label>Employee Name:</label>
-                <input type="text"
-                onChange={HandleChange}
-                name="userName"
-                value={usedata.userName}
-                placeholder="Enter Name Here..."/>
-                <br></br>
+        <form className="flex flex-col gap-4">
+          <input
+            type="text"
+            name="userName"
+            value={usedata.userName}
+            onChange={HandleChange}
+            placeholder="Employee Name"
+            className="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
 
-                <label>Employee ID:</label>
-                <input type="number"
-                onChange={HandleChange}
-                name="userID"
-                value={usedata.userID}
-                placeholder="Enter ID Here.."/>
-                <br></br>
+          <input
+            type="number"
+            name="userID"
+            value={usedata.userID}
+            onChange={HandleChange}
+            placeholder="Employee ID"
+            className="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
 
-                <label>Employee Department:</label>
-                <select
-                name="userDept"
-                value={usedata.userDept}
-                onChange={HandleChange}>
-                    <option value="">Select Department</option>
-                    <option value="IT">IT</option>
-                    <option value="HR">HR</option>
-                    <option value="Finance">Finance</option>
-                    <option value="Sales">Sales</option>
-                    <option value="Marketing">Marketing</option>
-                </select>
-                <br></br>
+          <select
+            name="userDept"
+            value={usedata.userDept}
+            onChange={HandleChange}
+            className="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          >
+            <option value="">Select Department</option>
+            <option value="IT">IT</option>
+            <option value="HR">HR</option>
+            <option value="Finance">Finance</option>
+            <option value="Sales">Sales</option>
+            <option value="Marketing">Marketing</option>
+          </select>
 
-                <label>Employee Salary:</label>
-                <input type="number"
-                onChange={HandleChange}
-                name="useSalary"
-                value={usedata.useSalary}
-                placeholder="Enter Salary Here.."/>
-                <br></br>
+          <input
+            type="number"
+            name="useSalary"
+            value={usedata.useSalary}
+            onChange={HandleChange}
+            placeholder="Employee Salary"
+            className="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
 
-                <button type="button" onClick={HandleClick}>{edit!==null ? "Updating...":"Register"}</button>
+          <button
+            type="button"
+            onClick={HandleClick}
+            className={`text-white py-3 rounded-lg transition ${
+              edit !== null
+                ? "bg-yellow-500 hover:bg-yellow-600"
+                : "bg-blue-600 hover:bg-blue-700"
+            }`}
+          >
+            {edit !== null ? "Update Employee" : "Register Employee"}
+          </button>
+        </form>
+      </div>
 
-            </form>
-
-            <div>
-                <table>
-    <thead>
-        <tr>
-            <th>Employee Name</th>
-            <th>Employee ID</th>
-            <th>Department</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        {savadata.map((e, i) => (
-            <tr key={i}>
-                <td>{e.userName}</td>
-                <td>{e.userID}</td>
-                <td>{e.userDept}</td>
-                <td>{e.useSalary}</td>
-                <td>
-                    <button  type="button" onClick={()=>Handleit(e,i)}>Edit</button>
-                    <button  type="button" onClick={()=>HandleDelete(i)}>Delete</button>
-                </td>
+      {/* Employee Table */}
+      <div className="mt-10 w-[90%] overflow-x-auto">
+        <table className="w-full bg-white shadow-lg rounded-xl overflow-hidden">
+          <thead className="bg-blue-600 text-white">
+            <tr>
+              <th className="p-4">Employee Name</th>
+              <th className="p-4">Employee ID</th>
+              <th className="p-4">Department</th>
+              <th className="p-4">Salary</th>
+              <th className="p-4">Actions</th>
             </tr>
-        ))}
-    </tbody>
-</table>
-            </div>
-        </div>
-    </div>
-  )
-}
+          </thead>
 
-export default EmployeeSystem
+          <tbody>
+            {savadata.map((e, i) => (
+              <tr
+                key={i}
+                className="text-center border-b hover:bg-gray-100"
+              >
+                <td className="p-4">{e.userName}</td>
+                <td className="p-4">{e.userID}</td>
+                <td className="p-4">{e.userDept}</td>
+                <td className="p-4">{e.useSalary}</td>
+
+                <td className="p-4 flex justify-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => Handleit(e, i)}
+                    className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600"
+                  >
+                    Edit
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => HandleDelete(i)}
+                    className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
+
+export default EmployeeSystem;

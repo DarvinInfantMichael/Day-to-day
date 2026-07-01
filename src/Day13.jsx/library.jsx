@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-const Registration = () => {
-  const [userdata, setUserdata] = useState({
-    UserName: "",
-    UserEmail: "",
-    Password: "",
+const BookManagement = () => {
+  const [bookData, setBookData] = useState({
+    BookName: "",
+    Author: "",
+    Price: "",
   });
 
   const [saveData, setSaveData] = useState(() => {
@@ -12,8 +12,8 @@ const Registration = () => {
   });
 
   const HandleChange = (e) => {
-    setUserdata({
-      ...userdata,
+    setBookData({
+      ...bookData,
       [e.target.name]: e.target.value,
     });
   };
@@ -21,81 +21,81 @@ const Registration = () => {
   const HandleClick = (e) => {
     e.preventDefault();
 
-    const res = [...saveData, userdata];
+    const res = [...saveData, bookData];
 
     localStorage.setItem("Items", JSON.stringify(res));
 
     setSaveData(res);
 
-    setUserdata({
-      UserName: "",
-      UserEmail: "",
-      Password: "",
+    setBookData({
+      BookName: "",
+      Author: "",
+      Price: "",
     });
   };
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10">
-      {/* Registration Form */}
+      {/* Form Card */}
       <div className="bg-white shadow-lg rounded-xl p-8 w-[400px]">
         <h1 className="text-3xl font-bold text-center text-blue-600 mb-6">
-          User Registration
+          Book Management System
         </h1>
 
         <form className="flex flex-col gap-4">
           <input
             type="text"
-            name="UserName"
-            value={userdata.UserName}
+            name="BookName"
+            value={bookData.BookName}
             onChange={HandleChange}
-            placeholder="Enter Username..."
-            className="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Enter Book Name..."
+            className="border rounded-lg p-3"
           />
 
           <input
-            type="email"
-            name="UserEmail"
-            value={userdata.UserEmail}
+            type="text"
+            name="Author"
+            value={bookData.Author}
             onChange={HandleChange}
-            placeholder="Enter Email..."
-            className="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Enter Author Name..."
+            className="border rounded-lg p-3"
           />
 
           <input
-            type="password"
-            name="Password"
-            value={userdata.Password}
+            type="number"
+            name="Price"
+            value={bookData.Price}
             onChange={HandleChange}
-            placeholder="Enter Password..."
-            className="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Enter Price..."
+            className="border rounded-lg p-3"
           />
 
           <button
             onClick={HandleClick}
-            className="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
+            className="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700"
           >
-            Register
+            Add Book
           </button>
         </form>
       </div>
 
-      {/* User Cards */}
+      {/* Book Cards */}
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
         {saveData.map((e, i) => (
           <div
             key={i}
             className="bg-white shadow-lg rounded-xl p-5 w-[320px]"
           >
-            <h2 className="text-2xl font-bold text-blue-600 mb-3">
-              {e.UserName}
+            <h2 className="text-2xl font-semibold text-blue-600 mb-3">
+              {e.BookName}
             </h2>
 
             <p className="text-gray-700">
-              <span className="font-medium">Email:</span> {e.UserEmail}
+              <span className="font-medium">Author:</span> {e.Author}
             </p>
 
             <p className="text-gray-700 mt-2">
-              <span className="font-medium">Password:</span> {e.Password}
+              <span className="font-medium">Price:</span> ₹{e.Price}
             </p>
           </div>
         ))}
@@ -104,4 +104,4 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+export default BookManagement;
