@@ -342,7 +342,7 @@ const Daycard = () => {
 
 
           <p className="text-gray-600 mb-6">
-            Registration,Login and Dashboard.
+            Form Handling Work.
           </p>
 
 
@@ -352,6 +352,25 @@ const Daycard = () => {
           >
             View Project
           </button>
+        </div>
+
+
+        <div className="bg-green-300 rounded-2xl shadow-2xl p-6 text-center">
+          <div className="w-20 h-20 mx-auto mb-5 rounded-full flex items-center justify-center bg-purple-700">
+          <span className="text-4xl">🔥</span>
+          </div>
+
+          <h2 className="text-2xl font-bold mb-2">
+            Day14
+          </h2>
+          <p>
+            UseEffects and concepts
+          </p>
+
+          <button
+          onClick={()=>nav("/Day14")} 
+          className="bg-amber-100  p-3 w-full rounded-2xl font-bold mt-4 ">View Work</button>
+
         </div>
 
         
