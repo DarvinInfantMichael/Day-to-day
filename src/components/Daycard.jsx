@@ -448,6 +448,41 @@ const Daycard = () => {
         </div>
 
 
+      <div className="bg-pink-400 rounded-2xl shadow-2xl p-6 text-center">
+          <div className="w-20 h-20 rounded-full bg-amber-200 flex items-center justify-center mx-auto">
+            <span className="text-4xl">🚀</span>
+          </div>
+           <div>
+              <h1 className="text-2xl font-bold mb-2 mt-5">
+                Day20
+              </h1>
+              <h1>User Fetching and Todo Data</h1>
+            </div>
+            <div>
+              <button onClick={()=>nav("/Day20")} className="bg-red-600 p-3 w-full rounded-2xl mt-4 text-white font-bold">View Work</button>
+            </div>
+
+        </div>
+
+
+        <div className="bg-amber-100 rounded-2xl shadow-2xl p-6 text-center ">
+          <div className="bg-red-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto"><span className="text-4xl">🔥</span> </div>
+
+          <div className="mt-5 text-2xl font-bold">
+            <h1>Day21</h1>
+          </div>
+
+          <div>
+            <p>UseHooks Concepts Here</p>
+          </div>
+
+          <div>
+            <button onClick={()=>nav("/Day21")} className="bg-red-600 p-3 w-full rounded-2xl text-white font-bold mt-4">View Process</button>
+          </div>
+
+
+        </div>
+
 
 
         

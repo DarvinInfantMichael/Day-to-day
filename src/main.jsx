@@ -8,6 +8,8 @@ import ThemeProvider from './Day19/provider/ThemeProvider.jsx'
 import StudentProvider from './Day19/provider/StudentProvider.jsx'
 import CartProvider from './Day19/provider/CartProvider'
 import BonusProvider from './Day19/provider/BonusProvider.jsx'
+import  { AuthProvider } from './Day20/context/AuthContext.jsx'
+
 
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>
@@ -16,7 +18,10 @@ createRoot(document.getElementById('root')).render(
             <StudentProvider>
                  <CartProvider>
                     <BonusProvider>
-                        <App/>
+                        <AuthProvider>
+                            <App/>
+                        </AuthProvider>
+                        
                     </BonusProvider>
                     
                  </CartProvider>

@@ -22,6 +22,12 @@ import Day16 from "../pages/Day16"
 import Day17 from "../pages/Day17"
 import Day18 from "../pages/Day18"
 import Day19 from "../pages/Day19"
+import Day20 from "../pages/Day20"
+import Register from "../Day20/pages/Register";
+import LoginPage from "../Day20/pages/LoginPage";
+import DashBoard from "../Day20/pages/DashBoard";
+import ProductedRoutes from "../Day20/routes/ProductedRoutes";
+import Day21 from "../pages/Day21"
 
 
 const AppRoutes = () => {
@@ -56,6 +62,13 @@ const AppRoutes = () => {
             <Route path="/Day17" element={<Day17/>}/>
             <Route path="/Day18" element={<Day18/>}/>
             <Route path="/Day19" element={<Day19/>}/>
+            <Route path="/Day20" element={<Day20/>}/>
+
+            <Route path="/register" element={<Register/>}></Route>
+            <Route path="/login" element={<LoginPage/>}></Route>
+            <Route path="/dash" element={ <ProductedRoutes><DashBoard/></ProductedRoutes>}></Route>
+
+            <Route path="/Day21" element={<Day21/>}/>
       </Routes>
     </>
   );
