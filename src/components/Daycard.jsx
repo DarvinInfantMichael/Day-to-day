@@ -485,6 +485,28 @@ const Daycard = () => {
 
 
 
+         <div className="bg-yellow-400 rounded-2xl shadow-2xl p-6 text-center ">
+          <div className="bg-red-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto"><span className="text-4xl">🔥</span> </div>
+
+          <div className="mt-5 text-2xl font-bold">
+            <h1>Day22</h1>
+          </div>
+
+          <div>
+            <p>UseHooks Concepts Here</p>
+          </div>
+
+          <div>
+            <button onClick={()=>nav("/Day21")} className="bg-red-600 p-3 w-full rounded-2xl text-white font-bold mt-4">View Process</button>
+          </div>
+
+
+        </div>
+
+        
+
+
+
         
 
       </div>
