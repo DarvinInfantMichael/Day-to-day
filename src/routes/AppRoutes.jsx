@@ -28,6 +28,7 @@ import LoginPage from "../Day20/pages/LoginPage";
 import DashBoard from "../Day20/pages/DashBoard";
 import ProductedRoutes from "../Day20/routes/ProductedRoutes";
 import Day21 from "../pages/Day21"
+import Day22 from "../pages/Day22"
 
 
 const AppRoutes = () => {
@@ -69,6 +70,7 @@ const AppRoutes = () => {
             <Route path="/dash" element={ <ProductedRoutes><DashBoard/></ProductedRoutes>}></Route>
 
             <Route path="/Day21" element={<Day21/>}/>
+            <Route path="/Day22" element={<Day22/>}/>
       </Routes>
     </>
   );

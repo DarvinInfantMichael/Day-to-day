@@ -497,7 +497,7 @@ const Daycard = () => {
           </div>
 
           <div>
-            <button onClick={()=>nav("/Day21")} className="bg-red-600 p-3 w-full rounded-2xl text-white font-bold mt-4">View Process</button>
+            <button onClick={()=>nav("/Day22")} className="bg-red-600 p-3 w-full rounded-2xl text-white font-bold mt-4">View Process</button>
           </div>
 
 
