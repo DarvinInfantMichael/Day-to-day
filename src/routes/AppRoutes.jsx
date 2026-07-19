@@ -31,6 +31,7 @@ import Day21 from "../pages/Day21"
 import Day22 from "../pages/Day22"
 import Day23 from "../pages/Day23";
 import Day24 from "../pages/Day24";
+import Day25 from "../pages/Day25";
 
 
 
@@ -76,6 +77,7 @@ const AppRoutes = () => {
             <Route path="/Day22" element={<Day22/>}/>
             <Route path="/Day23" element={<Day23/>}/>
             <Route path="/Day24" element={<Day24/>}/>
+            <Route path="/Day25/*" element={<Day25/>}/>
       </Routes>
     </>
   );
